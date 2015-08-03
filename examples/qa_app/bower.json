@@ -1,0 +1,19 @@
+{
+  "name": "qa_app",
+  "version": "0.0.0",
+  "homepage": "https://github.com/pandoraui/learnReact",
+  "authors": [
+    "jack <1395093509@qq.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.5"
+  }
+}
