@@ -5,3 +5,5 @@ var mainCom = React.render(
   <QuestionApp />,
   document.getElementById('app')
 );
+
+window.App = mainCom;

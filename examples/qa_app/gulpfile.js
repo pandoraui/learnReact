@@ -3,13 +3,14 @@ var gulp = require('gulp');
 browserify = require('gulp-browserify');
 //concat = require('gulp-concat');
 var $ = require('gulp-load-plugins')();
+var source = require('vinyl-source-stream');
 var browserSync = require("browser-sync").create();
 var reload = browserSync.reload;
 
 //之前需要使用 liveload 改为使用 browserSync
 //var reload = $.connect.reload;
 
-var port = process.env.port || 6000;
+var port = process.env.port || 5000;
 
 
 // 打包 Common JS 模块
@@ -19,6 +20,7 @@ gulp.task('browserify', function(){
   .pipe(browserify({
     transform: 'reactify',
   }))
+  //.pipe(source('main.js'))
   .pipe(gulp.dest('./dist/js'))
   .pipe( $.if(browserSync.active, reload({stream:true}) ) );
 })
@@ -26,6 +28,7 @@ gulp.task('browserify', function(){
 //live reload
 gulp.task('serve', function(){
   browserSync.init({
+    port: 5000,
     notify: false,
     open: "external", //local 
     logPrefix: 'QA',

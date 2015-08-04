@@ -21,6 +21,7 @@
     "gulp-load-plugins": "^0.10.0",
     "gulp-react": "^3.0.1",
     "lodash": "^3.10.0",
-    "reactify": "^1.1.1"
+    "reactify": "^1.1.1",
+    "vinyl-source-stream": "^1.1.0"
   }
 }
