@@ -69,7 +69,7 @@ module.exports = React.createClass({
       <div>
       <div className="jumbotron text-center">
         <div className="container">
-          <h1>功能测试</h1>
+          <h1>React 问答</h1>
           <ShowAddButton onToggleForm={this.onToggleForm} />
         </div>
       </div>
