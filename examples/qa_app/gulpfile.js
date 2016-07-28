@@ -39,11 +39,15 @@ var port = process.env.port || 5000;
 // 打包 Common JS 模块
 gulp.task('browserify', function(){
   gulp.src('./app/js/main.js')
+  
   //这里不能使用 $.browserify
+  //实质是 using vinyl-source-stream: 
   .pipe(browserify({
     transform: 'reactify',
   }))
+  .pipe($.sourcemaps.init())
   //.pipe(source('main.js'))
+  .pipe($.sourcemaps.write())
   .pipe(gulp.dest('./dist/js'))
   //$.if(bool, trueFn, falseFn)
   .pipe( $.if(browserSync.active, reload({stream:true}) ) );
